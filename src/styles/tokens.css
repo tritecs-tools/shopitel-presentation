@@ -1,0 +1,38 @@
+:root {
+  /* Brand (maroon) */
+  --color-brand-100: #f3e1e3;
+  --color-brand-300: #af787f;
+  --color-brand-400: #954b55;
+  --color-brand-500: #7a1e2a;
+  --color-brand-600: #611722;
+
+  /* Neutrals */
+  --color-neutral-white: #ffffff;
+  --color-neutral-50: #f9f9f9;
+  --color-neutral-100: #f2f2f2;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d6d6d6;
+  --color-neutral-500: #808080;
+  --color-neutral-600: #4d4d4d;
+  --color-neutral-700: #333333;
+  --color-neutral-800: #1a1a1a;
+  --color-neutral-900: #0d0d0d;
+
+  /* Semantic */
+  --color-success-100: #cff3cf;
+  --color-success-700: #115211;
+  --color-success-500: #2e9e2e;
+  --color-danger-50: #fbeceb;
+  --color-danger-100: #f6d9d8;
+  --color-danger-700: #7a1e2a;
+  --color-warning-100: #ffe9c7;
+  --color-warning-500: #e8890c;
+  --color-warning-700: #8a4b00;
+  --color-accent-orange: #e85c4a;
+
+  --color-stage-bg: #e9e9ec;
+
+  --radius-md: 8px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+}

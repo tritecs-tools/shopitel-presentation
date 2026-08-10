@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__25238c92-8de4-4bdf-a8a7-89d36d41c094__get_metadata",
+      "mcp__25238c92-8de4-4bdf-a8a7-89d36d41c094__get_figma_skill",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(npm view *)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

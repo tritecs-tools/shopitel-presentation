@@ -1,0 +1,23 @@
+export { default as iconMenuBoard } from "../assets/icons/menu-board.svg";
+export { default as iconLayer } from "../assets/icons/layer.svg";
+export { default as iconInfoCircle } from "../assets/icons/info-circle.svg";
+export { default as iconProfile } from "../assets/icons/profile.svg";
+export { default as iconScan } from "../assets/icons/scan.svg";
+export { default as iconBox } from "../assets/icons/box.svg";
+export { default as iconCategory } from "../assets/icons/category.svg";
+export { default as iconBoxSmall } from "../assets/icons/box-small.svg";
+export { default as iconSkuHash } from "../assets/icons/sku-hash.svg";
+export { default as iconChevronRight } from "../assets/icons/chevron-right.svg";
+export { default as iconArrowCircleLeft } from "../assets/icons/arrow-circle-left.svg";
+export { default as iconWifi } from "../assets/icons/wifi.svg";
+export { default as iconCellular } from "../assets/icons/cellular.svg";
+export { default as iconBatteryCap } from "../assets/icons/battery-cap.svg";
+export { default as iconCloseSquare } from "../assets/icons/close-square.svg";
+export { default as iconCall } from "../assets/icons/call.svg";
+export { default as iconSms } from "../assets/icons/sms.svg";
+export { default as iconLocationTick } from "../assets/icons/location-tick.svg";
+export { default as iconBill } from "../assets/icons/bill.svg";
+export { default as iconTickCircle } from "../assets/icons/tick-circle.svg";
+
+export { default as imgBarcodeScan } from "../assets/images/barcode-scan.png";
+export { default as imgProductThumb } from "../assets/images/product-thumb.png";

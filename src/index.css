@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/800.css";
+@import "@fontsource/cairo/400.css";
+@import "@fontsource/cairo/500.css";
+@import "@fontsource/cairo/600.css";
+@import "@fontsource/cairo/700.css";
+@import "@fontsource/cairo/800.css";
+@import "./styles/tokens.css";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Cairo", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+
+  --color-neutral-white: var(--color-neutral-white);
+  --color-neutral-50: var(--color-neutral-50);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+
+  --color-success-100: var(--color-success-100);
+  --color-success-500: var(--color-success-500);
+  --color-success-700: var(--color-success-700);
+
+  --color-danger-50: var(--color-danger-50);
+  --color-danger-100: var(--color-danger-100);
+  --color-danger-700: var(--color-danger-700);
+
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-700: var(--color-warning-700);
+
+  --color-accent-orange: var(--color-accent-orange);
+  --color-stage-bg: var(--color-stage-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  background: var(--color-stage-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+}
