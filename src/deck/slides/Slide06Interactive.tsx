@@ -7,7 +7,7 @@ export function Slide06Interactive({ active, steps }: { active: boolean; steps: 
   const [paused, setPaused] = useState(false);
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-[12px] bg-neutral-50 px-[80px] py-[18px]">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-[12px] bg-neutral-50 px-[80px] py-[18px] pl-[110px]">
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         animate={active ? { opacity: 1, y: 0 } : {}}
