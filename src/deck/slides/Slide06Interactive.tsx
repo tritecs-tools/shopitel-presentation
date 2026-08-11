@@ -14,7 +14,7 @@ export function Slide06Interactive({ active, steps }: { active: boolean; steps: 
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="flex flex-col items-center gap-[6px] text-center"
       >
-        <span className="text-[14px] font-bold text-brand-500">تجربة تفاعلية</span>
+        <span className="text-[14px] font-bold text-brand-500">مثال</span>
         <h2 className="text-[32px] font-extrabold text-neutral-900">لمحة عن التطبيق</h2>
         <p className="max-w-[520px] text-[15px] leading-[1.6] text-neutral-600">
           من بدء دفعة الالتقاط وحتى إكمالها — بنفس الشاشات الفعلية للتطبيق.
