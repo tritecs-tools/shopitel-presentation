@@ -20,7 +20,8 @@ export function Deck() {
   const pickupLoop = useMemo(() => steps.slice(1, 4), [steps]);
   const shortageLoop = useMemo(() => steps.slice(4, 7), [steps]);
   const packingLoop = useMemo(() => steps.slice(11, 16), [steps]);
-  const interactiveSlice = useMemo(() => steps.slice(0, 10), [steps]);
+  // Pickup List -> item detail/scan -> item completed -> all items completed, looping.
+  const overviewLoop = useMemo(() => [steps[1], steps[2], steps[3], steps[9]], [steps]);
 
   const slides: DeckSlide[] = useMemo(
     () => [
@@ -43,14 +44,14 @@ export function Deck() {
       },
       {
         id: "interactive",
-        label: "جرّب بنفسك",
-        Component: ({ active }) => <Slide06Interactive active={active} steps={interactiveSlice} />,
+        label: "لمحة عن التطبيق",
+        Component: ({ active }) => <Slide06Interactive active={active} steps={overviewLoop} />,
       },
       { id: "impact", label: "الأثر التجاري", Component: Slide07Impact },
       { id: "integration", label: "التكامل", Component: Slide08Integration },
       { id: "cta", label: "ابدأ الآن", Component: Slide09Cta },
     ],
-    [hero, pickupLoop, shortageLoop, packingLoop, interactiveSlice],
+    [hero, pickupLoop, shortageLoop, packingLoop, overviewLoop],
   );
 
   return <SlideDeck slides={slides} />;

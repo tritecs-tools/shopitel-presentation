@@ -28,22 +28,25 @@ export function DemoPlayer({
   intervalMs = 1500,
   scale = 1,
   active = true,
+  paused = false,
 }: {
   steps: Step[];
   mode: "loop" | "interactive";
   intervalMs?: number;
   scale?: number;
   active?: boolean;
+  /** Loop mode only: freezes on the current frame without resetting it. */
+  paused?: boolean;
 }) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (mode !== "loop" || !active) return;
+    if (mode !== "loop" || !active || paused) return;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % steps.length);
     }, intervalMs);
     return () => clearInterval(id);
-  }, [mode, active, steps.length, intervalMs]);
+  }, [mode, active, paused, steps.length, intervalMs]);
 
   useEffect(() => {
     if (!active) setIndex(0);
