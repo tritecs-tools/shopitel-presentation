@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Replace with your real Formspree form endpoint (formspree.io -> new form -> copy the endpoint URL).
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/myegwego";
 
 function CloseIcon() {
   return (
