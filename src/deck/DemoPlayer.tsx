@@ -9,8 +9,11 @@ const PHONE_H = 874;
 /** Renders a single, non-animated demo frame at a given scale — for hero/decorative use. */
 export function StaticPhone({ children, scale = 1 }: { children: ReactNode; scale?: number }) {
   return (
-    <div style={{ width: PHONE_W * scale, height: PHONE_H * scale }} className="shrink-0">
-      <div style={{ width: PHONE_W, height: PHONE_H, transform: `scale(${scale})`, transformOrigin: "top left" }}>
+    <div style={{ width: PHONE_W * scale, height: PHONE_H * scale }} className="relative shrink-0 overflow-hidden">
+      <div
+        style={{ width: PHONE_W, height: PHONE_H, transform: `scale(${scale})`, transformOrigin: "top left" }}
+        className="absolute left-0 top-0"
+      >
         {children}
       </div>
     </div>
@@ -57,10 +60,10 @@ export function DemoPlayer({
   const current = steps[Math.min(index, steps.length - 1)];
 
   return (
-    <div style={{ width: PHONE_W * scale, height: PHONE_H * scale }} className="shrink-0">
+    <div style={{ width: PHONE_W * scale, height: PHONE_H * scale }} className="relative shrink-0 overflow-hidden">
       <div
         style={{ width: PHONE_W, height: PHONE_H, transform: `scale(${scale})`, transformOrigin: "top left" }}
-        className={mode === "loop" ? "pointer-events-none" : undefined}
+        className={`absolute left-0 top-0 ${mode === "loop" ? "pointer-events-none" : ""}`}
       >
         <Stage stepKey={index} transition={current.transition} onAdvance={mode === "interactive" ? next : () => {}}>
           {current.render({ next, restart })}
