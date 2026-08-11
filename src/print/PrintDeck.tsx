@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import { buildDemoSteps } from "../demo/steps";
-import { StaticPhone } from "../deck/DemoPlayer";
+import { PrintPhone } from "./PrintPhone";
 import { PrintPage } from "./PrintPage";
-import { Slide01Cover } from "../deck/slides/Slide01Cover";
+import { PrintCover } from "./PrintCover";
+import { PrintFeatureSlide } from "./PrintFeatureSlide";
 import { Slide02Problem } from "../deck/slides/Slide02Problem";
-import { FeatureSlide } from "../deck/slides/FeatureSlide";
 import { Slide07Impact } from "../deck/slides/Slide07Impact";
 import { Slide08Integration } from "../deck/slides/Slide08Integration";
 import { Slide09CtaPrint } from "../deck/slides/Slide09CtaPrint";
@@ -23,39 +23,36 @@ export function PrintDeck() {
   return (
     <div className="bg-neutral-50">
       <PrintPage>
-        <Slide01Cover active hero={hero} />
+        <PrintCover hero={<PrintPhone scale={0.62}>{hero}</PrintPhone>} />
       </PrintPage>
       <PrintPage>
         <Slide02Problem active />
       </PrintPage>
       <PrintPage>
-        <FeatureSlide
-          active
+        <PrintFeatureSlide
           number={1}
           eyebrow="جمع المنتجات بالباركود"
           headline="أخطاء أقل، سرعة أعلى"
           caption="مسح باركود واحد يكفي لتسجيل الصنف وتحديث الكمية المُلتقطة فورًا — دون عدّ يدوي ودون تخمين."
-          phone={<StaticPhone scale={0.72}>{pickupFrame}</StaticPhone>}
+          phone={<PrintPhone scale={0.72}>{pickupFrame}</PrintPhone>}
         />
       </PrintPage>
       <PrintPage>
-        <FeatureSlide
-          active
+        <PrintFeatureSlide
           number={2}
           eyebrow="معالجة النقص الذكية"
           headline="النظام يتصرف نيابة عنك"
           caption="عند نفاد صنف، يحدّد المستخدم الكمية غير المتوفرة، ويتولى النظام تلقائيًا نقل الطلبات المتأثرة إلى المعلقة — دون فرز يدوي."
-          phone={<StaticPhone scale={0.72}>{shortageFrame}</StaticPhone>}
+          phone={<PrintPhone scale={0.72}>{shortageFrame}</PrintPhone>}
         />
       </PrintPage>
       <PrintPage>
-        <FeatureSlide
-          active
+        <PrintFeatureSlide
           number={3}
           eyebrow="التعبئة والشحن"
           headline="تعبئة أسرع، تسليم أدق"
           caption="مسح كل صنف عند التعبئة، تأكيد بيانات العميل، ثم تعليم الطلب كمشحون — بثلاث خطوات واضحة لكل عملية."
-          phone={<StaticPhone scale={0.72}>{packingFrame}</StaticPhone>}
+          phone={<PrintPhone scale={0.72}>{packingFrame}</PrintPhone>}
         />
       </PrintPage>
       <PrintPage>

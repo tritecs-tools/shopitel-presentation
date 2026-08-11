@@ -9,7 +9,13 @@ export function PrintPage({ children }: { children: ReactNode }) {
     <div
       className="relative shrink-0 overflow-hidden font-arabic"
       dir="rtl"
-      style={{ width: DECK_W, height: DECK_H, pageBreakAfter: "always", breakAfter: "page" }}
+      style={{
+        width: DECK_W,
+        height: DECK_H,
+        pageBreakAfter: "always",
+        breakAfter: "page",
+        contain: "paint",
+      }}
     >
       {children}
     </div>

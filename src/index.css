@@ -68,3 +68,12 @@ body {
 button {
   font-family: inherit;
 }
+
+/* Chromium's print pipeline can let overflow-y:auto elements grow to their full
+   content height instead of clipping, so phone mockups bleed past their frame
+   in the PDF export. Force hard clipping on every phone screen when printing. */
+@media print {
+  .overflow-y-auto {
+    overflow-y: hidden !important;
+  }
+}
