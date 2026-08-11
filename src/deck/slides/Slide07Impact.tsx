@@ -6,7 +6,7 @@ import { IconSmiley, IconBarChart, IconTarget, IconSpeedometer } from "../icons/
 const STATS = [
   { icon: <IconSmiley />, value: 35, sign: "+", unit: "%", label: "تجربة عميل أفضل", sub: "رضا أعلى من دقة وسرعة التسليم" },
   { icon: <IconBarChart />, value: 100, sign: "", unit: "%", label: "متابعة لحظية", sub: "رؤية كاملة لحالة كل طلب ودفعة" },
-  { icon: <IconTarget />, value: 60, sign: "-", unit: "%", label: "أخطاء أقل", sub: "في الالتقاط والتعبئة بفضل الباركود" },
+  { icon: <IconTarget />, value: 60, sign: "-", unit: "%", label: "أخطاء أقل", sub: "في جمع المنتجات والتعبئة بفضل الباركود" },
   { icon: <IconSpeedometer />, value: 45, sign: "+", unit: "%", label: "إنجاز أسرع للطلبات", sub: "تسريع دورة تنفيذ الطلبات الكاملة" },
 ];
 

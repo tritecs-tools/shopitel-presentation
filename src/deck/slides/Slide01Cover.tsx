@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ShopitelLogo } from "../Logo";
 import { StaticPhone } from "../DemoPlayer";
 
-const PILLS = ["الدفعات", "الالتقاط", "التعبئة", "الطلبات المعلقة", "الشحن"];
+const PILLS = ["الدفعات", "جمع المنتجات", "التعبئة", "الطلبات المعلقة", "الشحن"];
 
 export function Slide01Cover({ active, hero }: { active: boolean; hero: ReactNode }) {
   return (

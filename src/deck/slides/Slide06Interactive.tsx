@@ -19,7 +19,7 @@ export function Slide06Interactive({ active, steps }: { active: boolean; steps: 
       </motion.div>
 
       <div className="relative">
-        <DemoPlayer steps={steps} mode="interactive" scale={0.68} active={active} />
+        <DemoPlayer steps={steps} mode="interactive" scale={0.62} active={active} />
         <motion.div
           animate={{ y: [0, -6, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}

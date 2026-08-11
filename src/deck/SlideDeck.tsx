@@ -64,6 +64,10 @@ export function SlideDeck({ slides }: { slides: DeckSlide[] }) {
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      const target = e.target as HTMLElement | null;
+      const isTyping =
+        target?.tagName === "INPUT" || target?.tagName === "TEXTAREA" || target?.isContentEditable;
+      if (isTyping) return;
       if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(e.key)) {
         e.preventDefault();
         next();
@@ -114,14 +118,15 @@ export function SlideDeck({ slides }: { slides: DeckSlide[] }) {
         </div>
       </div>
 
-      {/* edge nav zones — kept clear of centered slide content */}
+      {/* edge nav zones — thin strips right at the viewport edge so they never overlap
+          interactive slide content (e.g. the tappable phone on the interactive slide) */}
       <button
         aria-label="الشريحة السابقة"
         onClick={prev}
         disabled={current === 0}
-        className="group absolute inset-x-0 top-0 z-30 h-[44px] cursor-pointer disabled:cursor-default"
+        className="group absolute inset-x-0 top-0 z-30 flex h-[14px] cursor-pointer items-center justify-center overflow-hidden disabled:cursor-default"
       >
-        <span className="mx-auto flex h-full w-[120px] items-center justify-center text-neutral-400 opacity-0 transition-opacity group-hover:opacity-100 group-disabled:opacity-0">
+        <span className="flex w-[120px] items-center justify-center text-neutral-400 opacity-0 transition-opacity group-hover:opacity-100 group-disabled:opacity-0">
           <ChevronUp />
         </span>
       </button>
@@ -129,9 +134,9 @@ export function SlideDeck({ slides }: { slides: DeckSlide[] }) {
         aria-label="الشريحة التالية"
         onClick={next}
         disabled={current === total - 1}
-        className="group absolute inset-x-0 bottom-0 z-30 h-[44px] cursor-pointer disabled:cursor-default"
+        className="group absolute inset-x-0 bottom-0 z-30 flex h-[14px] cursor-pointer items-center justify-center overflow-hidden disabled:cursor-default"
       >
-        <span className="mx-auto flex h-full w-[120px] rotate-180 items-center justify-center text-neutral-400 opacity-0 transition-opacity group-hover:opacity-100 group-disabled:opacity-0">
+        <span className="flex w-[120px] rotate-180 items-center justify-center text-neutral-400 opacity-0 transition-opacity group-hover:opacity-100 group-disabled:opacity-0">
           <ChevronUp />
         </span>
       </button>

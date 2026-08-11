@@ -10,7 +10,7 @@ export function Slide05Packing({ active, loopSteps }: { active: boolean; loopSte
       eyebrow="التعبئة والشحن"
       headline="تعبئة أسرع، تسليم أدق"
       caption="مسح كل صنف عند التعبئة، تأكيد بيانات العميل، ثم تعليم الطلب كمشحون — بثلاث خطوات واضحة لكل عملية."
-      phone={<DemoPlayer steps={loopSteps} mode="loop" intervalMs={950} scale={0.72} active={active} />}
+      phone={<DemoPlayer steps={loopSteps} mode="loop" intervalMs={1600} scale={0.72} active={active} />}
     />
   );
 }

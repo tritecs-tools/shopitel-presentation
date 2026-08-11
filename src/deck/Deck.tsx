@@ -28,7 +28,7 @@ export function Deck() {
       { id: "problem", label: "المشكلة", Component: Slide02Problem },
       {
         id: "pickup",
-        label: "الالتقاط بالباركود",
+        label: "جمع المنتجات بالباركود",
         Component: ({ active }) => <Slide03Pickup active={active} loopSteps={pickupLoop} />,
       },
       {

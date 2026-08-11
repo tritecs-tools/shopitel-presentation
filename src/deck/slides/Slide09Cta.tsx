@@ -1,29 +1,19 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ShopitelLogo } from "../Logo";
 import { IconArrowLeft } from "../icons/DeckIcons";
-
-function CratePattern() {
-  return (
-    <svg className="absolute inset-0 h-full w-full opacity-[0.14]" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <pattern id="crates" width="120" height="120" patternUnits="userSpaceOnUse">
-          <rect x="6" y="6" width="46" height="46" rx="4" fill="none" stroke="white" strokeWidth="2" />
-          <path d="M6 29h46M29 6v46" stroke="white" strokeWidth="1.4" />
-          <rect x="64" y="58" width="52" height="52" rx="4" fill="none" stroke="white" strokeWidth="2" />
-          <path d="M64 84h52M90 58v52" stroke="white" strokeWidth="1.4" />
-          <rect x="-10" y="70" width="36" height="36" rx="4" fill="none" stroke="white" strokeWidth="2" />
-        </pattern>
-      </defs>
-      <rect width="100%" height="100%" fill="url(#crates)" />
-    </svg>
-  );
-}
+import { EmailCaptureModal } from "../EmailCaptureModal";
+import imgPatternBg from "../../assets/images/pattern-bg.png";
 
 export function Slide09Cta({ active }: { active: boolean }) {
+  const [formOpen, setFormOpen] = useState(false);
+
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center gap-[32px] overflow-hidden bg-[linear-gradient(160deg,var(--color-brand-600),var(--color-brand-500)_60%,var(--color-brand-600))] px-[80px] text-center">
-      <CratePattern />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
+    <div
+      className="relative flex h-full w-full flex-col items-center justify-center gap-[32px] overflow-hidden bg-cover bg-center px-[80px] text-center"
+      style={{ backgroundImage: `url(${imgPatternBg})` }}
+    >
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/15" />
 
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -43,8 +33,8 @@ export function Slide09Cta({ active }: { active: boolean }) {
         فعّل تطبيق إدارة المتجر للجوال، واجعل تنفيذ الطلبات أسرع وأكثر دقة
       </motion.h2>
 
-      <motion.a
-        href="mailto:eyad.0588@gmail.com?subject=%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6%20%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8%D9%8A%20-%20Shopitel"
+      <motion.button
+        onClick={() => setFormOpen(true)}
         initial={{ opacity: 0, y: 18 }}
         animate={active ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
@@ -54,7 +44,9 @@ export function Slide09Cta({ active }: { active: boolean }) {
         <span className="flex size-[40px] items-center justify-center rounded-full bg-brand-500 text-neutral-white">
           <IconArrowLeft />
         </span>
-      </motion.a>
+      </motion.button>
+
+      <AnimatePresence>{formOpen && <EmailCaptureModal onClose={() => setFormOpen(false)} />}</AnimatePresence>
     </div>
   );
 }

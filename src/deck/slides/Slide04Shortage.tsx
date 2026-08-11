@@ -10,7 +10,7 @@ export function Slide04Shortage({ active, loopSteps }: { active: boolean; loopSt
       eyebrow="معالجة النقص الذكية"
       headline="النظام يتصرف نيابة عنك"
       caption="عند نفاد صنف، يحدّد المستخدم الكمية غير المتوفرة، ويتولى النظام تلقائيًا نقل الطلبات المتأثرة إلى المعلقة — دون فرز يدوي."
-      phone={<DemoPlayer steps={loopSteps} mode="loop" intervalMs={1700} scale={0.72} active={active} />}
+      phone={<DemoPlayer steps={loopSteps} mode="loop" intervalMs={2600} scale={0.72} active={active} />}
     />
   );
 }
