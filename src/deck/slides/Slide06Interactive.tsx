@@ -7,7 +7,7 @@ export function Slide06Interactive({ active, steps }: { active: boolean; steps: 
   const [paused, setPaused] = useState(false);
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-[14px] bg-neutral-50 px-[80px] py-[22px]">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-[12px] bg-neutral-50 px-[80px] py-[18px]">
       <motion.div
         initial={{ opacity: 0, y: 14 }}
         animate={active ? { opacity: 1, y: 0 } : {}}
@@ -21,11 +21,14 @@ export function Slide06Interactive({ active, steps }: { active: boolean; steps: 
         </p>
       </motion.div>
 
-      <div className="relative cursor-pointer" onClick={() => setPaused((p) => !p)}>
-        <DemoPlayer steps={steps} mode="loop" intervalMs={3200} scale={0.62} active={active} paused={paused} />
-        <div className="pointer-events-none absolute -bottom-[8px] left-1/2 -translate-x-1/2 rounded-full bg-brand-500 px-[16px] py-[8px] text-[13px] font-semibold text-neutral-white shadow-lg">
-          {paused ? "متوقف مؤقتًا — اضغط للمتابعة" : "اضغط للإيقاف المؤقت"}
-        </div>
+      <div className="flex flex-col items-center gap-[14px]">
+        <DemoPlayer steps={steps} mode="loop" intervalMs={3200} scale={0.6} active={active} paused={paused} />
+        <button
+          onClick={() => setPaused((p) => !p)}
+          className="flex cursor-pointer items-center justify-center rounded-full bg-brand-500 px-[20px] py-[10px] text-[13px] font-semibold text-neutral-white shadow-lg transition-colors hover:bg-brand-600"
+        >
+          {paused ? "اضغط للمتابعة" : "اضغط للإيقاف المؤقت"}
+        </button>
       </div>
     </div>
   );
